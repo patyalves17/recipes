@@ -1,0 +1,18 @@
+.recipes {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  .card{
+    width: 20%;
+    margin:10px;
+
+    img {
+      border-radius: 4px;
+    }
+  }
+
+  .mat-mdc-card {
+    box-shadow: none;
+  }
+}

@@ -1,1 +1,27 @@
-<p>recipes works!</p>
+
+<div class="recipes">
+  <mat-card class="card" *ngFor="let recipe of recipes">
+    <img mat-card-image [src]="recipe.image" [alt]="recipe.title">
+
+    <mat-card-header>
+      <mat-card-title>{{recipe.title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-chip-set>
+        <mat-chip>
+          <mat-icon aria-hidden="false" aria-label=" icon" fontIcon="schedule"></mat-icon>
+          {{recipe.readyInMinutes + "'"}}
+        </mat-chip>
+        <mat-chip>
+          <mat-icon aria-hidden="false" aria-label=" icon" fontIcon="person_2"></mat-icon>
+          {{recipe.servings}}
+        </mat-chip>
+
+        <mat-chip>
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="attach_money"></mat-icon>
+          {{recipe.pricePerServing}}
+        </mat-chip>
+      </mat-chip-set>
+    </mat-card-content>
+  </mat-card>
+</div>
