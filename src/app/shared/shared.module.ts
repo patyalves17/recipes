@@ -9,7 +9,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   declarations: [
     HeaderComponent,
     HeaderComponent
-  ],
+   ],
   exports: [
     HeaderComponent
   ],

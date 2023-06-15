@@ -1,5 +1,7 @@
-import { RecipesService } from './../services/recipes.service';
 import { Component, OnInit } from '@angular/core';
+
+import { Recipe } from '../core/interfaces/recipe';
+import { RecipesService } from '../core/services/recipes.service';
 
 @Component({
   selector: 'app-recipes',
@@ -7,15 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipes.component.scss']
 })
 export class RecipesComponent implements OnInit {
-  public recipes:any = null;
+  public recipes:Recipe[] = [];
 
   constructor(private recipesService: RecipesService){}
 
   ngOnInit(): void {
     this.recipesService.getComplexSearch().subscribe(data => {
-      this.recipes = data['results'];
-      console.log('[getRandomRecipes]',this.recipes)
+      this.recipes = data.results;
+      console.log('[getRandomRecipes][data]',data)
+      console.log('[getRandomRecipes][recipes]',this.recipes)
+
     });
+  }
+
+  trackByMethod(index:number, el:any): number {
+    return el.id;
   }
 
 }

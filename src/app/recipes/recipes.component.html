@@ -1,6 +1,6 @@
 
 <div class="recipes">
-  <mat-card class="card" *ngFor="let recipe of recipes">
+  <mat-card class="card" *ngFor="let recipe of recipes; trackBy: trackByMethod" >
     <img mat-card-image [src]="recipe.image" [alt]="recipe.title">
 
     <mat-card-header>
